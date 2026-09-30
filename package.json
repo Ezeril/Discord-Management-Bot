@@ -1,0 +1,25 @@
+{
+  "name": "discord-management-bot",
+  "version": "2.0.0",
+  "description": "Bot Discord de gestion open source : modération, tickets, anti-raid et fun, 100 % personnalisable via config.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "check": "node scripts/check.js"
+  },
+  "keywords": ["discord", "discord-bot", "discord.js", "moderation", "tickets", "anti-raid", "francais"],
+  "author": "Ezeril (https://ezeril.xo.je)",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.22.0",
+    "dotenv": "^16.4.5",
+    "ms": "^2.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dépendances
+node_modules/
+
+# Données générées par le bot (avertissements, mutes, blacklist, tickets...)
+data/*.json
+data/*.tmp
+!data/.gitkeep
+
+# Logs & divers
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
