@@ -1,0 +1,33 @@
+const { PermissionFlagsBits } = require('discord.js');
+const embed = require('../../utils/embed');
+
+module.exports = {
+  name: 'delrole',
+  description: 'Retire un rôle à un membre.',
+  usage: 'delrole <@membre> <@role>',
+  category: 'Administration',
+  userPerms: [PermissionFlagsBits.ManageRoles],
+  botPerms: [PermissionFlagsBits.ManageRoles],
+
+  async execute(message, args) {
+    const target = message.mentions.members.first() || (args[0] ? await message.guild.members.fetch(args[0]).catch(() => null) : null);
+    const role = message.mentions.roles.first() || (args[1] ? message.guild.roles.cache.get(args[1]) : null);
+
+    if (!target) return message.reply({ embeds: [embed.error('Erreur', 'Membre introuvable.')] });
+    if (!role) return message.reply({ embeds: [embed.error('Erreur', 'Rôle introuvable.')] });
+
+    if (role.position >= message.member.roles.highest.position && message.author.id !== message.guild.ownerId) {
+      return message.reply({ embeds: [embed.error('Erreur', 'Vous ne pouvez pas retirer un rôle supérieur ou égal au vôtre.')] });
+    }
+    if (role.position >= message.guild.members.me.roles.highest.position) {
+      return message.reply({ embeds: [embed.error('Erreur', 'Je ne peux pas retirer ce rôle car il est supérieur ou égal au mien.')] });
+    }
+
+    if (!target.roles.cache.has(role.id)) {
+      return message.reply({ embeds: [embed.warning('Attention', 'Ce membre ne possède pas ce rôle.')] });
+    }
+
+    await target.roles.remove(role);
+    message.reply({ embeds: [embed.success('Succès', `Le rôle ${role} a été retiré à **${target.user.tag}**.`)] });
+  },
+};
