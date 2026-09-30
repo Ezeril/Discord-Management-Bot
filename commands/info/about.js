@@ -11,7 +11,7 @@ module.exports = {
   category: 'Info',
   cooldown: 5,
   protected: true,
-  
+
   async execute(message, args, client) {
     assertIntegrity(client);
 
