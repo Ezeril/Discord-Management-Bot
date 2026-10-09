@@ -31,7 +31,7 @@
 | 🚨 **Anti-raid** | Détection d'arrivées massives, lockdown automatique **avec restauration exacte des permissions**, filtre de comptes récents |
 | 🤖 **Anti-spam** | Détection des messages identiques et des mass-mentions, timeout automatique, staff exempté |
 | 👑 **Administration** | Lock/unlock, slowmode, gestion des rôles, sondages, constructeur d'embed interactif, blacklist du bot |
-| 🎮 **Fun** | 8ball, compatibilité amoureuse, affiche WANTED |
+| 🎮 **Fun** | 8ball, compatibilité amoureuse, affiche WANTED, pierre-feuille-ciseaux, blagues |
 | 🎨 **Personnalisation** | Couleurs des embeds, nom du bot, footer, emojis, statut rotatif, textes des tickets… tout dans `config.js` |
 | 📖 **Aide dynamique** | Menu `+help` généré automatiquement depuis les commandes chargées |
 
