@@ -1,6 +1,6 @@
 {
   "name": "discord-management-bot",
-  "version": "2.0.0",
+  "version": "1.0.2",
   "description": "Bot Discord de gestion open source : modération, tickets, anti-raid et fun, 100 % personnalisable via config.js",
   "main": "index.js",
   "scripts": {
