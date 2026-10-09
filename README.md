@@ -254,8 +254,10 @@ Tape `+help` pour le menu interactif ou `+help <commande>` pour le détail.
 | `8ball <question>` | `ask` | Boule magique |
 | `couple <membre> [membre]` | `love`, `amour` | Pourcentage de compatibilité |
 | `wanted [membre]` | `recherche` | Affiche WANTED avec l'avatar du membre |
+| `!blague` | `joke`, `humour` | Affiche une blague aléatoire. |
+| `!pfc <pierre\|feuille\|ciseaux>` | `shifumi`, `rps` | Joue à pierre-feuille-ciseaux contre le bot. |
 
-> ⚠️ `+wanted` s'appuie sur une **API tierce** (Popcat). Si elle est hors ligne, le bot affiche un message d'erreur propre ; tu peux désactiver la commande via `disabledCommands: ['wanted']`.
+> ⚠️ Les commandes `+wanted` et `+blague` s'appuient sur des **API tierces** (respectivement Popcat et JokeAPI). Si l'une de ces API est indisponible, le bot affiche un message d'erreur propre. Tu peux désactiver les commandes concernées via `disabledCommands: ['wanted', 'blague']`, ou n'ajouter que celle que tu souhaites désactiver.
 
 ---
 
