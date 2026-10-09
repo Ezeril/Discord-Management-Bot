@@ -9,9 +9,8 @@ module.exports = {
   category: 'Fun',
   cooldown: 3,
 
-  async execute(message, args) {
+  async execute(message, args = []) {
     const playerChoice = (args[0] || '').toLowerCase();
-
     const choices = ['pierre', 'feuille', 'ciseaux'];
 
     if (args.length !== 1 || !choices.includes(playerChoice)) {
@@ -26,7 +25,9 @@ module.exports = {
       });
     }
 
-    const botChoice = choices[Math.floor(Math.random() * choices.length)];
+    const botChoice = choices[
+      Math.floor(Math.random() * choices.length)
+    ];
 
     const emojis = {
       pierre: '🪨',
@@ -56,4 +57,9 @@ module.exports = {
           '🪨 Pierre • Feuille • Ciseaux',
           `Ton choix : ${emojis[playerChoice]} ${playerChoice}\n` +
           `Mon choix : ${emojis[botChoice]} ${botChoice}\n\n` +
-          resu
+          result
+        ),
+      ],
+    });
+  },
+};
