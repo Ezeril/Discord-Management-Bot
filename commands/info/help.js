@@ -10,6 +10,7 @@ const CATEGORY_META = {
   'Administration': { emoji: '👑', label: 'Administration', description: 'Commandes pour gérer le serveur' },
   'Info':           { emoji: 'ℹ️', label: 'Informations',   description: 'Statistiques et informations utiles' },
   'Fun':            { emoji: '🎮', label: 'Fun',            description: 'Commandes mini-jeux' },
+  'Giveaway':       { emoji: '🎊', label: 'Giveaway',       description: 'Créer et gérer les concours du serveur' },
 };
 
 const firstSentence = (text = '') => {
@@ -26,7 +27,6 @@ module.exports = {
   cooldown: 5,
 
   async execute(message, args, client) {
-    // ── Détail d'une commande ──
     if (args[0]) {
       const cmd = client.commands.get(args[0].toLowerCase());
       if (!cmd) return message.reply({ embeds: [embed.error('Erreur', `Commande \`${args[0]}\` introuvable.`)] });
@@ -46,7 +46,6 @@ module.exports = {
       });
     }
 
-    // ── Regroupement dynamique des commandes par catégorie ──
     const unique = [...new Set(client.commands.values())];
     const byCategory = new Map();
     for (const cmd of unique) {
